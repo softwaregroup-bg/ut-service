@@ -1,3 +1,13 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.1...v0.1.2) (2018-06-08)
+
+
+### Bug Fixes
+
+* remove publishConfig ([b7f342b](https://github.com/softwaregroup-bg/ut-service/commit/b7f342b))
+
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2018-06-08)
 
