@@ -1,0 +1,57 @@
+{
+  "name": "ut-service",
+  "version": "0.1.0",
+  "description": "generic service",
+  "main": "index.js",
+  "scripts": {
+    "lint": "ut-lint .",
+    "release": "ut-release",
+    "changelog": "ut-changelog",
+    "check": "ut-check",
+    "cover": "ut-cover",
+    "precover": "ut-precover",
+    "lint-js": "ut-lint-js .",
+    "postpublish": "ut-postpublish",
+    "postversion": "ut-postversion",
+    "precommit": "ut-precommit",
+    "prepublish": "ut-prepublish",
+    "prepush": "ut-prepush",
+    "pretest": "ut-pretest",
+    "preversion": "ut-preversion",
+    "test": "ut-test",
+    "version": "ut-version",
+    "jenkins": "ut-jenkins",
+    "gitlab": "ut-gitlab"
+  },
+  "dependencies": {
+    "lodash.isequal": "4.5.0",
+    "ut-port-console": "^8.0.0",
+    "ut-port-http": "^7.2.0",
+    "ut-port-performance": "^6.0.0",
+    "ut-port-script": "^6.0.0",
+    "ut-port-sql": "^7.3.0",
+    "ut-port-swagger": "^1.0.0",
+    "ut-run": "^9.6.0"
+  },
+  "devDependencies": {
+    "ut-tools": "^5.32.10"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.softwaregroup-bg.com/repository/npm-internal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softwaregroup-bg/ut-service.git"
+  },
+  "keywords": [
+    "service",
+    "generic service"
+  ],
+  "bugs": {
+    "url": "https://github.com/softwaregroup-bg/ut-service/issues"
+  },
+  "homepage": "https://github.com/softwaregroup-bg/ut-service#readme",
+  "author": "Software Group",
+  "license": "Apache-2.0"
+}
+
