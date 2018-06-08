@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/softwaregroup-bg/ut-service.git"
+    "url": "git@github.com:softwaregroup-bg/ut-service.git"
   },
   "keywords": [
     "service",
