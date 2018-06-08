@@ -36,9 +36,6 @@
   "devDependencies": {
     "ut-tools": "^5.32.10"
   },
-  "publishConfig": {
-    "registry": "https://nexus.softwaregroup-bg.com/repository/npm-internal"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:softwaregroup-bg/ut-service.git"
