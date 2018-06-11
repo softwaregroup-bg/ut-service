@@ -34,17 +34,34 @@ module.exports = port => {
                             return bus.importMethod(`crypto.${entity}.add`)({
                                 documentType,
                                 items
-                            });
+                            })
+                            .then(() => 'added');
                         }
                         if (!isEqual(items, result.items)) {
                             return bus.importMethod(`crypto.${entity}.update`)({
                                 documentType,
                                 items
-                            });
+                            })
+                            .then(() => 'updated');
                         }
-                        return true;
-                    });
+                        return 'up to date';
+                    })
+                    .then((status) => ({documentType, entity, status}));
                 }));
-            }));
+            }))
+            .then(result => {
+                if (port.log.info) {
+                    port.log.info(
+                        {
+                            $meta: {
+                                mtid: 'event',
+                                opcode: 'crypto.sync'
+                            },
+                            summary: result.reduce((all, obj) => all.concat(obj), [])
+                        }
+                    );
+                }
+                return true;
+            });
         });
 };
