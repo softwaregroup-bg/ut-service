@@ -1,3 +1,13 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.2...v0.1.3) (2018-06-11)
+
+
+### Bug Fixes
+
+* improve crypto sync log ([9171a01](https://github.com/softwaregroup-bg/ut-service/commit/9171a01))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.1...v0.1.2) (2018-06-08)
 
