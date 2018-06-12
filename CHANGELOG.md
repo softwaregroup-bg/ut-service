@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.6...v0.2.0) (2018-06-12)
+
+
+### Features
+
+* add possibility to plug ut-service into existing servers ([e474f3c](https://github.com/softwaregroup-bg/ut-service/commit/e474f3c))
+
+
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.5...v0.1.6) (2018-06-12)
 
