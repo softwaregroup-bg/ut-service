@@ -1,3 +1,13 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.4...v0.1.5) (2018-06-12)
+
+
+### Bug Fixes
+
+* temporary fix ([ac1058e](https://github.com/softwaregroup-bg/ut-service/commit/ac1058e))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.3...v0.1.4) (2018-06-11)
 
