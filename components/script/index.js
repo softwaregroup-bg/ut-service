@@ -7,6 +7,9 @@ module.exports = {
             const port = {
                 id: 'script',
                 createPort: require('ut-port-script'),
+                db: true,
+                crypto: true,
+                models: [],
                 imports: [config.service],
                 namespace: [config.service],
                 start() {

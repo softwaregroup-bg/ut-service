@@ -11,6 +11,12 @@ module.exports = function crypto(config = {}) {
                     imports: ['crypto'],
                     namespace: ['crypto'],
                     url: 'http://127.0.0.1:8099',
+                    mock: false,
+                    autoSync: {
+                        interval: 3000,
+                        retries: 5
+                    },
+                    models: {},
                     raw: {
                         json: true,
                         jar: true,
