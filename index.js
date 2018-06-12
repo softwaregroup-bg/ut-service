@@ -1,3 +1,4 @@
+const utRun = require('ut-run');
 const components = [
     require('./components/performance'),
     require('./components/script'),
@@ -6,9 +7,12 @@ const components = [
     require('./components/crypto'),
     require('./components/db')
 ];
-const utRun = require('ut-run');
-module.exports = (params = {}, parent) => {
-    // params.main = ({bus, config}) => components.map(component => component({bus, config}));
-    params.main = components.concat(params.main).filter(x => x);
-    return utRun.run(params, parent || module.parent);
-};
+
+module.exports = Object.defineProperty(function utService() {
+    return components;
+}, 'run', {
+    value: function run(params = {}, parent) {
+        params.main = components.concat(params.main).filter(x => x);
+        return utRun.run(params, parent || module.parent);
+    }
+});
