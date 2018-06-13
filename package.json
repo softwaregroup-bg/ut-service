@@ -30,7 +30,7 @@
     "ut-port-http": "^7.2.0",
     "ut-port-performance": "^6.0.0",
     "ut-port-script": "^6.0.0",
-    "ut-port-sql": "^7.3.0",
+    "ut-port-sql": "^7.3.1",
     "ut-port-swagger": "^1.1.2",
     "ut-run": "^9.7.0-rc-einstein.0"
   },

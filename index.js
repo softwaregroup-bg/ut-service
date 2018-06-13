@@ -9,7 +9,11 @@ const components = [
 ];
 
 module.exports = Object.defineProperty(function utService() {
-    return components;
+    return components.reduce((all, component) => {
+        return {
+            ports: all.ports.concat(component.ports)
+        };
+    }, {ports: []});
 }, 'run', {
     value: function run(params = {}, parent) {
         params.main = components.concat(params.main).filter(x => x);
