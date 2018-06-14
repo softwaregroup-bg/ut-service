@@ -1,3 +1,14 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.2.0...v0.2.1) (2018-06-14)
+
+
+### Bug Fixes
+
+* refactor ([92673dc](https://github.com/softwaregroup-bg/ut-service/commit/92673dc))
+* remove ut-port-httpserver dependency ([afe314d](https://github.com/softwaregroup-bg/ut-service/commit/afe314d))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.1.6...v0.2.0) (2018-06-12)
 
