@@ -1,3 +1,13 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.3.0...v0.4.0) (2018-06-22)
+
+
+### Features
+
+* add update route in addition to the edit route. Update is PUT for full update while edit is PATCH for partial update ([6244150](https://github.com/softwaregroup-bg/ut-service/commit/6244150))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.2.1...v0.3.0) (2018-06-22)
 
