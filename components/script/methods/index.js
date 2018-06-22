@@ -2,6 +2,7 @@ const methods = {
     get: require('./get'),
     add: require('./add'),
     edit: require('./edit'),
+    update: require('./update'),
     remove: require('./remove'),
     fetch: require('./fetch')
 };

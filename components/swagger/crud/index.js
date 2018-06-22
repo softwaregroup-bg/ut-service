@@ -1,5 +1,6 @@
 const add = require('./add');
 const edit = require('./edit');
+const update = require('./update');
 const fetch = require('./fetch');
 const get = require('./get');
 const remove = require('./remove');
@@ -21,6 +22,7 @@ module.exports = service => (model, basePath = '/api') => {
                 post: add(service, spec),
                 get: get(service, spec),
                 patch: edit(service, spec),
+                put: update(service, spec),
                 delete: remove(service, spec)
             };
             all[`/${service}/${spec.name}/search`] = {
