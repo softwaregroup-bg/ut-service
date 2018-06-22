@@ -3,7 +3,7 @@ const edit = require('./edit');
 const fetch = require('./fetch');
 const get = require('./get');
 const remove = require('./remove');
-module.exports = service => model => { // name, schema
+module.exports = service => (model, basePath = '/api') => {
     if (!Array.isArray(model)) {
         model = [model];
     }
@@ -15,8 +15,8 @@ module.exports = service => model => { // name, schema
             version: '1.0'
         },
         produces: ['application/json'],
-        basePath: '/api',
-        paths: model.reduce((all, spec) => {
+        basePath,
+        paths: model.filter(x => x).reduce((all, spec) => {
             all[`/${service}/${spec.name}`] = {
                 post: add(service, spec),
                 get: get(service, spec),
