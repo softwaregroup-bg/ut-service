@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.2.1...v0.3.0) (2018-06-22)
+
+
+### Features
+
+* add possibility to pass custom basePath when generating the automatic CRUD api ([ee3d0c8](https://github.com/softwaregroup-bg/ut-service/commit/ee3d0c8))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.2.0...v0.2.1) (2018-06-14)
 
