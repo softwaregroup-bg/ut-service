@@ -1,3 +1,13 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.4.0...v0.5.0) (2018-07-02)
+
+
+### Features
+
+* Add cache component ([c6166c5](https://github.com/softwaregroup-bg/ut-service/commit/c6166c5))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.3.0...v0.4.0) (2018-06-22)
 
