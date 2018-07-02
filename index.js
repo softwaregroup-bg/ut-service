@@ -1,6 +1,7 @@
 const utRun = require('ut-run');
 const components = [
     require('./components/performance'),
+    require('./components/cache'),
     require('./components/script'),
     require('./components/swagger'),
     require('./components/console'),
