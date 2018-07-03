@@ -19,8 +19,8 @@ module.exports = (service, spec) => {
                     $ref: '#/definitions/error'
                 }
             },
-            200: {
-                description: 'Successful request.',
+            201: {
+                description: 'Record successfully created',
                 schema: {
                     type: 'object',
                     required: ['id'],
