@@ -17,7 +17,7 @@ module.exports = {
                 }
             };
             (config.models || []).forEach(type => {
-                const handlers = methods({type});
+                const handlers = methods({type, db: config.db});
                 Object.keys(handlers).forEach(action => {
                     port[`${config.service}.${type}.${action}`] = handlers[action];
                 });
