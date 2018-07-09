@@ -1,3 +1,20 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.5.1...v0.6.0) (2018-07-09)
+
+
+### Bug Fixes
+
+* add sync logic to partial update and full update ([b7ca751](https://github.com/softwaregroup-bg/ut-service/commit/b7ca751))
+* update dependency to ut-port-swagger ([598f80d](https://github.com/softwaregroup-bg/ut-service/commit/598f80d))
+
+
+### Features
+
+* add amqp component with producer and consumer ([fd830f1](https://github.com/softwaregroup-bg/ut-service/commit/fd830f1))
+* x-sync header ([9777df8](https://github.com/softwaregroup-bg/ut-service/commit/9777df8))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.5.0...v0.5.1) (2018-07-03)
 
