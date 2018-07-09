@@ -1,6 +1,7 @@
 module.exports = ({type, db}) => {
     return async function add(msg, $meta) {
-        const crypto = await this.bus.importMethod('crypto.record.add')({type, data: msg, skipIndex: db});
+        // const async = $meta.requestHeaders['x-async'];
+        const crypto = await this.bus.importMethod('crypto.record.add')({type, data: msg, skipIndex: db /* , async */});
         if (db) {
             msg.cryptoId = crypto.id;
             try {

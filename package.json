@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "lodash.isequal": "4.5.0",
+    "ut-port-amqp": "^0.4.4",
     "ut-port-cache": "^0.1.3",
     "ut-port-console": "^8.1.0-rc-einstein.0",
     "ut-port-http": "^7.3.0-rc-einstein.0",
@@ -32,7 +33,7 @@
     "ut-port-script": "^6.0.0",
     "ut-port-sql": "^7.3.1",
     "ut-port-swagger": "^1.2.1",
-    "ut-run": "^9.7.0-rc-einstein.1"
+    "ut-run": "^9.7.0-rc-einstein.3"
   },
   "devDependencies": {
     "ut-tools": "^5.32.10"
