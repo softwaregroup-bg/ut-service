@@ -7,7 +7,7 @@ const methods = {
     fetch: require('./fetch')
 };
 
-module.exports = ({type, db}) => {
+module.exports = ({type, db = false}) => {
     const api = {};
     Object.keys(methods).forEach(method => {
         api[method] = methods[method]({type, db});

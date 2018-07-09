@@ -1,7 +1,7 @@
 module.exports = ({type, db}) => {
     return async function add(msg, $meta) {
-        // const async = $meta.requestHeaders['x-async'];
-        const crypto = await this.bus.importMethod('crypto.record.add')({type, data: msg, skipIndex: db /* , async */});
+        const sync = ($meta.requestHeaders && $meta.requestHeaders['x-sync']) || false;
+        const crypto = await this.bus.importMethod('crypto.record.add')({type, data: msg, skipIndex: db, sync});
         if (db) {
             msg.cryptoId = crypto.id;
             try {
@@ -10,7 +10,7 @@ module.exports = ({type, db}) => {
                 await this.bus.importMethod('crypto.record.remove')({id: crypto.id});
                 throw e;
             }
-            await this.bus.importMethod('crypto.record.index')({id: crypto.id});
+            await this.bus.importMethod('crypto.record.index')({id: crypto.id, sync});
         }
         return {
             id: crypto.id
