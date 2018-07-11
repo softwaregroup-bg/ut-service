@@ -37,7 +37,6 @@ module.exports = Object.defineProperty(function utService() {
         if (!config.port.service) {
             config.port.service = config.service;
         }
-        Object.assign(params, config.params);
         params.config = Object.assign({}, defaultConfig, config);
         params.main = components.concat(params.main).filter(x => x);
         return utRun.run(params, parent);
