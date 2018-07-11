@@ -1,3 +1,13 @@
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.6.0...v0.6.1) (2018-07-11)
+
+
+### Bug Fixes
+
+* update ut-run ([8668b98](https://github.com/softwaregroup-bg/ut-service/commit/8668b98))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.5.1...v0.6.0) (2018-07-09)
 
