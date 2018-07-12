@@ -27,7 +27,15 @@ module.exports = (service, spec) => {
                 description: 'Successful request.',
                 schema: {
                     type: 'array',
-                    items: schema
+                    items: {
+                        type: 'object',
+                        properties: {
+                            id: {
+                                $ref: '#/definitions/uuid'
+                            },
+                            data: schema
+                        }
+                    }
                 }
             }
         }

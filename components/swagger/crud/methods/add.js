@@ -1,12 +1,10 @@
 module.exports = (service, spec) => {
     let { name, schema } = spec;
-    let data = Object.assign({}, schema);
-    delete data.required;
     return {
-        'x-bus-method': `${service}.${name}.edit`,
-        operationId: `edit${name}`,
+        'x-bus-method': `${service}.${name}.add`,
+        operationId: `add${name}`,
         tags: [name],
-        description: `Edit a ${name}.`,
+        description: `Creates a new ${name}.`,
         parameters: [{
             name: 'body',
             in: 'body',
@@ -15,14 +13,13 @@ module.exports = (service, spec) => {
             schema: {
                 type: 'object',
                 required: [
-                    'id',
                     'data'
                 ],
                 properties: {
-                    id: {
-                        $ref: '#/definitions/uuid'
+                    sync: {
+                        $ref: '#/definitions/sync'
                     },
-                    data: data
+                    data: schema
                 }
             }
         }],
@@ -33,9 +30,17 @@ module.exports = (service, spec) => {
                     $ref: '#/definitions/error'
                 }
             },
-            200: {
-                description: 'Successful request.',
-                schema: schema
+            201: {
+                description: 'Record successfully created',
+                schema: {
+                    type: 'object',
+                    required: ['id'],
+                    properties: {
+                        id: {
+                            $ref: '#/definitions/uuid'
+                        }
+                    }
+                }
             }
         }
     };

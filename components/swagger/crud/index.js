@@ -1,9 +1,5 @@
-const add = require('./add');
-const edit = require('./edit');
-const update = require('./update');
-const fetch = require('./fetch');
-const get = require('./get');
-const remove = require('./remove');
+const {add, edit, update, fetch, get, remove} = require('./methods');
+const definitions = require('./definitions');
 module.exports = service => (model, basePath = '/api') => {
     if (!Array.isArray(model)) {
         model = [model];
@@ -30,30 +26,6 @@ module.exports = service => (model, basePath = '/api') => {
             };
             return all;
         }, {}),
-        definitions: {
-            uuid: {
-                type: 'string',
-                pattern: '^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$'
-            },
-            error: {
-                type: 'object',
-                properties: {
-                    error: {
-                        type: 'object',
-                        properties: {
-                            type: {
-                                type: 'string'
-                            },
-                            message: {
-                                type: 'string'
-                            }
-                        },
-                        required: ['type', 'message'],
-                        additionalProperties: true
-                    }
-                },
-                required: ['error']
-            }
-        }
+        definitions
     };
 };

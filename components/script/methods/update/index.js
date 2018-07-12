@@ -1,7 +1,6 @@
 module.exports = ({type, db}) => {
     return async function edit(msg, $meta) {
-        const { id, data } = msg;
-        const sync = ($meta.requestHeaders && $meta.requestHeaders['x-sync']) || false;
+        const { sync = false, id, data } = msg;
         const cryptoResult = await this.bus.importMethod('crypto.record.get')({id});
         if (db) {
             await this.bus.importMethod(`db/${$meta.method}`)(Object.assign({}, data, {externalId: id}));
@@ -14,6 +13,6 @@ module.exports = ({type, db}) => {
             }
             throw e;
         }
-        return data;
+        return {id};
     };
 };
