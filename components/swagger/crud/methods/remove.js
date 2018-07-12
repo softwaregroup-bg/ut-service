@@ -20,7 +20,7 @@ module.exports = (service, spec) => {
                 }
             },
             200: {
-                description: 'Successful request.',
+                description: 'Record successfully deleted',
                 schema: {
                     type: 'object',
                     required: ['id'],

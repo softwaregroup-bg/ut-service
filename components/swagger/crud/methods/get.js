@@ -24,7 +24,7 @@ module.exports = (service, spec) => {
                 }
             },
             200: {
-                description: 'Successful request.',
+                description: 'Records successfully obtained',
                 schema: {
                     type: 'array',
                     items: {
