@@ -5,12 +5,3 @@ exports.request = function(msg, $meta) {
         allowedStatusCodes: msg.allowedStatusCodes
     };
 };
-
-exports.error = function(err, $meta) {
-    if (err && err.code === 404) {
-        throw this.errors['crypto.resourceNotFound']({params: {
-            resourceType: 'index'
-        }});
-    }
-    throw err;
-};
