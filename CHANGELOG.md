@@ -1,3 +1,19 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.6.1...v0.7.0) (2018-07-13)
+
+
+### Bug Fixes
+
+* improve code ([b897725](https://github.com/softwaregroup-bg/ut-service/commit/b897725))
+* remove unused code and change successfull response namings in swagger ([8fe29f9](https://github.com/softwaregroup-bg/ut-service/commit/8fe29f9))
+
+
+### Features
+
+* refactor REST Api ([b565bbf](https://github.com/softwaregroup-bg/ut-service/commit/b565bbf))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.6.0...v0.6.1) (2018-07-11)
 
