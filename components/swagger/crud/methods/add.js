@@ -1,16 +1,27 @@
 module.exports = (service, spec) => {
-    let { name } = spec;
+    let { name, schema } = spec;
     return {
-        'x-bus-method': `${service}.${name}.remove`,
-        operationId: `remove${name}`,
+        'x-bus-method': `${service}.${name}.add`,
+        operationId: `add${name}`,
         tags: [name],
-        description: `Remove ${name}.`,
+        description: `Creates a new ${name}.`,
         parameters: [{
-            name: 'id',
-            in: 'query',
-            description: 'id',
+            name: 'body',
+            in: 'body',
+            description: 'body',
             required: true,
-            $ref: '#/definitions/uuid'
+            schema: {
+                type: 'object',
+                required: [
+                    'data'
+                ],
+                properties: {
+                    sync: {
+                        $ref: '#/definitions/sync'
+                    },
+                    data: schema
+                }
+            }
         }],
         responses: {
             default: {
@@ -19,12 +30,11 @@ module.exports = (service, spec) => {
                     $ref: '#/definitions/error'
                 }
             },
-            200: {
-                description: 'Successful request.',
+            201: {
+                description: 'Record successfully created',
                 schema: {
                     type: 'object',
                     required: ['id'],
-                    additionalProperties: false,
                     properties: {
                         id: {
                             $ref: '#/definitions/uuid'

@@ -22,6 +22,9 @@ module.exports = (service, spec) => {
                     id: {
                         $ref: '#/definitions/uuid'
                     },
+                    sync: {
+                        $ref: '#/definitions/sync'
+                    },
                     data: data
                 }
             }
@@ -34,8 +37,16 @@ module.exports = (service, spec) => {
                 }
             },
             200: {
-                description: 'Successful request.',
-                schema: schema
+                description: 'Record successfully updated',
+                schema: {
+                    type: 'object',
+                    required: ['id'],
+                    properties: {
+                        id: {
+                            $ref: '#/definitions/uuid'
+                        }
+                    }
+                }
             }
         }
     };
