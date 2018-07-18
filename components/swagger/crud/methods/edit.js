@@ -1,7 +1,21 @@
+const removeRequired = obj => {
+    if (obj.type === 'object') {
+        delete obj.required;
+        if (obj.properties) {
+            obj.properties = {...obj.properties}; // don't override by reference
+            for (let prop in obj.properties) {
+                if (obj.properties.hasOwnProperty(prop)) {
+                    obj.properties[prop] = {...obj.properties[prop]};  // don't override by reference
+                    removeRequired(obj.properties[prop]);
+                }
+            }
+        };
+    }
+};
 module.exports = (service, spec) => {
-    let { name, schema } = spec;
-    let data = Object.assign({}, schema);
-    delete data.required;
+    const { name } = spec;
+    const data = {...spec.schema};  // don't override by reference
+    removeRequired(data);
     return {
         'x-bus-method': `${service}.${name}.edit`,
         operationId: `edit${name}`,

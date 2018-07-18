@@ -5,12 +5,3 @@ exports.request = function(msg, $meta) {
         payload: msg
     };
 };
-
-exports.error = function(err, $meta) {
-    throw this.errors.crypto({
-        cause: err,
-        details: {
-            statusCode: 404
-        }
-    });
-};

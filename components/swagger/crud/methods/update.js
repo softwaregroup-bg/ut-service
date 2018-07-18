@@ -1,7 +1,5 @@
 module.exports = (service, spec) => {
     let { name, schema } = spec;
-    let data = Object.assign({}, schema);
-    delete data.required;
     return {
         'x-bus-method': `${service}.${name}.update`,
         operationId: `update${name}`,
@@ -25,7 +23,7 @@ module.exports = (service, spec) => {
                     sync: {
                         $ref: '#/definitions/sync'
                     },
-                    data: data
+                    data: schema
                 }
             }
         }],
