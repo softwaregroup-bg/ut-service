@@ -1,3 +1,18 @@
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.7.0...v0.8.0) (2018-07-19)
+
+
+### Bug Fixes
+
+* remove unused dependencies ([ad6976f](https://github.com/softwaregroup-bg/ut-service/commit/ad6976f))
+
+
+### Features
+
+* implement partial update and improve error handling ([3131a33](https://github.com/softwaregroup-bg/ut-service/commit/3131a33))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.6.1...v0.7.0) (2018-07-13)
 
