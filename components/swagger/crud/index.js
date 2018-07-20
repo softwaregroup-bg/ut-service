@@ -1,5 +1,12 @@
-const {add, edit, update, fetch, get, remove} = require('./methods');
 const definitions = require('./definitions');
+const routes = [
+    require('./routes/add'),
+    require('./routes/edit'),
+    require('./routes/update'),
+    require('./routes/fetch'),
+    require('./routes/get'),
+    require('./routes/remove')
+];
 module.exports = service => (model, basePath = '/api') => {
     if (!Array.isArray(model)) {
         model = [model];
@@ -13,18 +20,17 @@ module.exports = service => (model, basePath = '/api') => {
         },
         produces: ['application/json'],
         basePath,
-        paths: model.filter(x => x).reduce((all, spec) => {
-            all[`/${service}/${spec.name}`] = {
-                post: add(service, spec),
-                get: get(service, spec),
-                patch: edit(service, spec),
-                put: update(service, spec),
-                delete: remove(service, spec)
-            };
-            all[`/${service}/${spec.name}/search`] = {
-                post: fetch(service, spec)
-            };
-            return all;
+        paths: model.filter(x => x).reduce((paths, spec) => {
+            routes.forEach(route => {
+                const {path, method, definition} = route(service, spec);
+                if (!paths[path]) {
+                    paths[path] = {};
+                } else if (paths[path][method]) {
+                    throw new Error(`Method: ${method} is already defined for path: ${path}`);
+                }
+                paths[path][method] = definition;
+            });
+            return paths;
         }, {}),
         definitions
     };
