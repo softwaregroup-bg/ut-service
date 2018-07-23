@@ -1,3 +1,16 @@
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.8.0...v0.8.1) (2018-07-23)
+
+
+### Bug Fixes
+
+* allow path parameters ([a3f3913](https://github.com/softwaregroup-bg/ut-service/commit/a3f3913))
+* fix linting ([d8dae37](https://github.com/softwaregroup-bg/ut-service/commit/d8dae37))
+* fix typos ([0e6177e](https://github.com/softwaregroup-bg/ut-service/commit/0e6177e))
+* update dependency to ut-port-swagger ([dbb03ee](https://github.com/softwaregroup-bg/ut-service/commit/dbb03ee))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.7.0...v0.8.0) (2018-07-19)
 
