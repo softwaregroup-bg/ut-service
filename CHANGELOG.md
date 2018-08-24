@@ -1,3 +1,19 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.8.1...v0.9.0) (2018-08-24)
+
+
+### Bug Fixes
+
+* nomenclatures ([2d9cce9](https://github.com/softwaregroup-bg/ut-service/commit/2d9cce9))
+* service context POC ([fe68ab5](https://github.com/softwaregroup-bg/ut-service/commit/fe68ab5))
+
+
+### Features
+
+* context ([5eebf91](https://github.com/softwaregroup-bg/ut-service/commit/5eebf91))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.8.0...v0.8.1) (2018-07-23)
 
