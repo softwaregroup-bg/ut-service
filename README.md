@@ -9,7 +9,6 @@ Ut-service can be used in 2 different ways:
     ```
     required('ut-service').run({version, main})
     ```
-
     where:
 
 * `version` is the package.json version. E.g. ```version: require('./package.json').version```
