@@ -1,3 +1,13 @@
+<a name="0.9.2"></a>
+## [0.9.2](https://github.com/softwaregroup-bg/ut-service/compare/v0.9.1...v0.9.2) (2018-09-10)
+
+
+### Bug Fixes
+
+* update dependency to ut-port-swagger ([e8d9e8d](https://github.com/softwaregroup-bg/ut-service/commit/e8d9e8d))
+
+
+
 <a name="0.9.1"></a>
 ## [0.9.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.9.0...v0.9.1) (2018-08-24)
 

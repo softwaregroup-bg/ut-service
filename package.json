@@ -1,6 +1,6 @@
 {
   "name": "ut-service",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "generic service",
   "main": "index.js",
   "scripts": {
