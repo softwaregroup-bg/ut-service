@@ -64,6 +64,35 @@ const generateContextRoutes = (context, path, paths = {}) => {
     return paths;
 };
 
+const generateMetaRoutes = service => {
+    const routes = {};
+    routes[`/${service}/health`] = {
+        get: {
+            operationId: `${service}.health`,
+            tags: ['context'],
+            description: `${service}.health`,
+            'x-bus-method': `${service}.health`,
+            responses: {
+                default: {
+                    description: 'Invalid request.',
+                    schema: {
+                        $ref: '#/definitions/error'
+                    }
+                },
+                200: {
+                    description: 'Health status ok',
+                    schema: {
+                        type: 'object',
+                        properties: {},
+                        additionalProperties: false
+                    }
+                }
+            }
+        }
+    };
+    return routes;
+};
+
 module.exports = {
     ports: [
         function swagger(config = {}) {
@@ -79,7 +108,8 @@ module.exports = {
                 start() {
                     this.swaggerDocument = preProcess(this.swaggerDocument, context);
                     const contextRoutes = generateContextRoutes(context, `/${service}/context`);
-                    Object.assign(this.swaggerDocument.paths, contextRoutes);
+                    const metaRoutes = generateMetaRoutes(service);
+                    Object.assign(this.swaggerDocument.paths, contextRoutes, metaRoutes);
                 }
             };
         }

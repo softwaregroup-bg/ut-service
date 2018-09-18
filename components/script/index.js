@@ -31,6 +31,7 @@ module.exports = {
                 });
             });
             generateContextMethods(port, context, `${config.service}.context`);
+            port[`${config.service}.health`] = msg => ({});
             return port;
         }
     ]
