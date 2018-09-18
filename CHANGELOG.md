@@ -1,3 +1,13 @@
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.9.2...v0.10.0) (2018-09-18)
+
+
+### Features
+
+* implement default healtcheck behavior ([1e0a7e6](https://github.com/softwaregroup-bg/ut-service/commit/1e0a7e6))
+
+
+
 <a name="0.9.2"></a>
 ## [0.9.2](https://github.com/softwaregroup-bg/ut-service/compare/v0.9.1...v0.9.2) (2018-09-10)
 
