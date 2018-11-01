@@ -1,7 +1,6 @@
-module.exports = (service, spec) => {
-    let { name } = spec;
+module.exports = ({service, name}) => {
     return {
-        path: `/${service}/${spec.name}/{id}`,
+        path: `/${service}/${name}/{id}`,
         method: 'delete',
         definition: {
             'x-bus-method': `${service}.${name}.remove`,

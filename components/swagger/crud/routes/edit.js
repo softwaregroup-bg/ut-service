@@ -12,12 +12,11 @@ const removeRequired = obj => {
         };
     }
 };
-module.exports = (service, spec) => {
-    const { name } = spec;
-    const data = {...spec.schema};  // don't override by reference
+module.exports = ({service, name, schema}) => {
+    const data = {...schema};  // don't override by reference
     removeRequired(data);
     return {
-        path: `/${service}/${spec.name}`,
+        path: `/${service}/${name}`,
         method: 'patch',
         definition: {
             'x-bus-method': `${service}.${name}.edit`,
@@ -42,7 +41,7 @@ module.exports = (service, spec) => {
                         sync: {
                             $ref: '#/definitions/sync'
                         },
-                        data: data
+                        data
                     }
                 }
             }],

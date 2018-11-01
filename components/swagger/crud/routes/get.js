@@ -1,7 +1,6 @@
-module.exports = (service, spec) => {
-    const { name, schema } = spec;
+module.exports = ({service, name, schema}) => {
     return {
-        path: `/${service}/${spec.name}/{id}`,
+        path: `/${service}/${name}/{id}`,
         method: 'get',
         definition: {
             'x-bus-method': `${service}.${name}.get`,

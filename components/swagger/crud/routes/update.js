@@ -1,7 +1,6 @@
-module.exports = (service, spec) => {
-    let { name, schema } = spec;
+module.exports = ({service, name, schema}) => {
     return {
-        path: `/${service}/${spec.name}`,
+        path: `/${service}/${name}`,
         method: 'put',
         definition: {
             'x-bus-method': `${service}.${name}.update`,
