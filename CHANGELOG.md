@@ -1,3 +1,13 @@
+<a name="0.10.1"></a>
+## [0.10.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.0...v0.10.1) (2018-11-01)
+
+
+### Bug Fixes
+
+* use variables properly according to latest functions' signatures ([5db6cb4](https://github.com/softwaregroup-bg/ut-service/commit/5db6cb4))
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/softwaregroup-bg/ut-service/compare/v0.9.2...v0.10.0) (2018-09-18)
 
