@@ -2,7 +2,7 @@ module.exports = ({service, name}) => {
     return {
         path: `/${service}/${name}/{id}`,
         method: 'delete',
-        definition: {
+        spec: {
             'x-bus-method': `${service}.${name}.remove`,
             operationId: `remove${name}`,
             tags: [name],

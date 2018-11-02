@@ -1,4 +1,5 @@
 const crud = require('./crud');
+const definitions = require('./definitions');
 const generateSchema = require('generate-schema');
 const interpolationRegex = /^\$\{[\w]+(\.[\w]+)*\}$/g;
 const preProcess = (schema, context) => {
@@ -44,9 +45,7 @@ const generateContextRoutes = (context, path, paths = {}) => {
             responses: {
                 default: {
                     description: 'Invalid request.',
-                    schema: {
-                        $ref: '#/definitions/error'
-                    }
+                    schema: definitions.error
                 },
                 200: {
                     description: 'Record successfully obtained',
@@ -75,9 +74,7 @@ const generateMetaRoutes = service => {
             responses: {
                 default: {
                     description: 'Invalid request.',
-                    schema: {
-                        $ref: '#/definitions/error'
-                    }
+                    schema: definitions.error
                 },
                 200: {
                     description: 'Health status ok',

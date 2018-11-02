@@ -2,7 +2,7 @@ module.exports = ({service, name, schema}) => {
     return {
         path: `/${service}/${name}/{id}`,
         method: 'get',
-        definition: {
+        spec: {
             'x-bus-method': `${service}.${name}.get`,
             operationId: `get${name}`,
             tags: [name],

@@ -1,4 +1,4 @@
-const definitions = require('./definitions');
+const definitions = require('../definitions');
 const routes = [
     require('./routes/add'),
     require('./routes/edit'),
@@ -34,13 +34,13 @@ module.exports = service => {
         swaggerDocument.paths = Object.keys(schemas).reduce((paths, name) => {
             const schema = schemas[name];
             routes.forEach(route => {
-                const {path, method, definition} = route({service, name, schema});
+                const {path, method, spec} = route({service, name, schema});
                 if (!paths[path]) {
                     paths[path] = {};
                 } else if (paths[path][method]) {
                     throw new Error(`Method: ${method} is already defined for path: ${path}`);
                 }
-                paths[path][method] = definition;
+                paths[path][method] = spec;
             });
             return paths;
         }, {});

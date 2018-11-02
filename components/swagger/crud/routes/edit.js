@@ -18,7 +18,7 @@ module.exports = ({service, name, schema}) => {
     return {
         path: `/${service}/${name}`,
         method: 'patch',
-        definition: {
+        spec: {
             'x-bus-method': `${service}.${name}.edit`,
             operationId: `edit${name}`,
             tags: [name],
