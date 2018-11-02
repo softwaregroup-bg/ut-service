@@ -1,3 +1,13 @@
+<a name="0.10.2"></a>
+## [0.10.2](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.1...v0.10.2) (2018-11-02)
+
+
+### Bug Fixes
+
+* reorganize code, improve naming and use local definitions for meta and context routes ([436f854](https://github.com/softwaregroup-bg/ut-service/commit/436f854))
+
+
+
 <a name="0.10.1"></a>
 ## [0.10.1](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.0...v0.10.1) (2018-11-01)
 
