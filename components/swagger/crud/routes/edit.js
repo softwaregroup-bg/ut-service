@@ -16,7 +16,7 @@ module.exports = ({service, name, schema}) => {
     const data = {...schema};  // don't override by reference
     removeRequired(data);
     return {
-        path: `/${service}/${name}`,
+        path: `/${name}`,
         method: 'patch',
         spec: {
             'x-bus-method': `${service}.${name}.edit`,
