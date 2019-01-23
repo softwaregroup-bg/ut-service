@@ -1,3 +1,8 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/softwaregroup-bg/ut-service/compare/v1.0.0-models.2...v1.0.0) (2019-01-23)
+
+
+
 <a name="0.10.3"></a>
 ## [0.10.3](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.2...v0.10.3) (2019-01-15)
 
