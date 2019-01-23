@@ -1,3 +1,13 @@
+<a name="0.10.3"></a>
+## [0.10.3](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.2...v0.10.3) (2019-01-15)
+
+
+### Bug Fixes
+
+* update ut-port-swagger version ([da11eda](https://github.com/softwaregroup-bg/ut-service/commit/da11eda))
+
+
+
 <a name="0.10.2"></a>
 ## [0.10.2](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.1...v0.10.2) (2018-11-02)
 
