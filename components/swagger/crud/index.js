@@ -12,14 +12,14 @@ const routes = [
  * @param {string} service - The name of the service. E.g
  * @returns {function} - a crud factory function
  */
-module.exports = service => {
+module.exports = ({service, models}) => {
     /**
      * @param {object} options - the documentation properties that are needed to create the swagger spec
      * @param {object} options.schemas - a key-value collection of primary object schemas
      * @param {string} options.basePath - api base path
      * @returns {object} - swagger document
      */
-    return (schemas = {}, basePath = '/api') => {
+    return ({basePath = '/api'}) => {
         const swaggerDocument = {
             swagger: '2.0',
             info: {
@@ -31,8 +31,8 @@ module.exports = service => {
             basePath,
             definitions
         };
-        swaggerDocument.paths = Object.keys(schemas).reduce((paths, name) => {
-            const schema = schemas[name];
+        swaggerDocument.paths = Object.keys(models).reduce((paths, name) => {
+            const schema = models[name].schema || {};
             routes.forEach(route => {
                 const {path, method, spec} = route({service, name, schema});
                 if (!paths[path]) {

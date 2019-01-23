@@ -21,10 +21,11 @@ module.exports = port => {
     };
     return checkHealth()
         .then(() => {
-            let models = config.models || {};
+            const models = config.models || {};
             return Promise.all(Object.keys(models).map(documentType => {
+                const config = models[documentType].crypto || {};
                 return Promise.all(['index', 'constraint'].map(entity => {
-                    const items = models[documentType][entity] || [];
+                    const items = config[entity] || [];
                     return bus.importMethod(`crypto.${entity}.get`)({
                         documentType,
                         allowedStatusCodes: 404
