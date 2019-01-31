@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/softwaregroup-bg/ut-service/compare/v1.0.0...v1.1.0) (2019-01-31)
+
+
+### Features
+
+* add possibility to set response headers ([bbd11b6](https://github.com/softwaregroup-bg/ut-service/commit/bbd11b6))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/softwaregroup-bg/ut-service/compare/v1.0.0-models.2...v1.0.0) (2019-01-23)
 
