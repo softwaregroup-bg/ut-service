@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.0...v1.1.1) (2019-02-04)
+
+
+### Bug Fixes
+
+* ugrade to working version of ut-run ([65602c3](https://github.com/softwaregroup-bg/ut-service/commit/65602c3))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/softwaregroup-bg/ut-service/compare/v1.0.0...v1.1.0) (2019-01-31)
 
