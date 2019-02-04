@@ -1,3 +1,13 @@
+<a name="0.10.4"></a>
+## [0.10.4](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.3...v0.10.4) (2019-02-04)
+
+
+### Bug Fixes
+
+* update dependency to ut-run ([60612d9](https://github.com/softwaregroup-bg/ut-service/commit/60612d9))
+
+
+
 <a name="0.10.3"></a>
 ## [0.10.3](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.2...v0.10.3) (2019-01-15)
 
