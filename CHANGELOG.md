@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.1...v1.1.2) (2019-02-05)
+
+
+### Bug Fixes
+
+* set fixed version to ut-poert ([721816d](https://github.com/softwaregroup-bg/ut-service/commit/721816d))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.0...v1.1.1) (2019-02-04)
 
