@@ -1,3 +1,13 @@
+<a name="0.10.5"></a>
+## [0.10.5](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.4...v0.10.5) (2019-02-05)
+
+
+### Bug Fixes
+
+* set fixed version to ut-port ([1410ce3](https://github.com/softwaregroup-bg/ut-service/commit/1410ce3))
+
+
+
 <a name="0.10.4"></a>
 ## [0.10.4](https://github.com/softwaregroup-bg/ut-service/compare/v0.10.3...v0.10.4) (2019-02-04)
 
