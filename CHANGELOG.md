@@ -1,3 +1,15 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.2...v1.1.3) (2019-02-07)
+
+
+### Bug Fixes
+
+* ignore package-lock ([3afc110](https://github.com/softwaregroup-bg/ut-service/commit/3afc110))
+* remove package-lock ([f9b8610](https://github.com/softwaregroup-bg/ut-service/commit/f9b8610))
+* set strict dependencies to ut-modules ([a53eb07](https://github.com/softwaregroup-bg/ut-service/commit/a53eb07))
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.1...v1.1.2) (2019-02-05)
 
