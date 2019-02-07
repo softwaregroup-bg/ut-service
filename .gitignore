@@ -2,5 +2,6 @@ node_modules
 *.log
 dev
 temp.*
+package-lock.json
 coverage
 junit.xml
