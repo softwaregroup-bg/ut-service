@@ -1,3 +1,4 @@
+const path = require('path');
 const utRun = require('ut-run');
 const components = [
     require('./components/performance'),
@@ -30,6 +31,14 @@ module.exports = Object.defineProperty(function utService() {
     }, {ports: []});
 }, 'run', {
     value: async function run(params = {}, parent = module.parent) {
+        if (!params.root) {
+            params.root = path.dirname(parent.filename);
+        }
+        if (!params.resolve) {
+            params.resolve = (request, options = {paths: parent.paths.concat(params.root)}) => {
+                return require.resolve(request, options);
+            };
+        }
         const config = await utRun.getConfig(params, parent);
         if (!config.port) {
             config.port = {};
