@@ -9,9 +9,7 @@ const preProcess = (schema, context) => {
                 const tokens = schema.slice(2, -1).split('.');
                 while (tokens.length) {
                     context = context[tokens.shift()];
-                    if (!context) {
-                        return schema;
-                    }
+                    if (!context) return schema;
                 }
                 return context;
             }
@@ -30,10 +28,10 @@ const preProcess = (schema, context) => {
     }
 };
 
-const generateMetaRoutes = ({service, context = {}, models = {}, prefix = '/meta'}) => {
+const generateMetaRoutes = ({namespace, context = {}, models = {}, prefix = '/meta'}) => {
     const getPath = path => prefix ? `${prefix}${path}` : path;
     const contextRoutes = (data, path = '/context', paths = {}) => {
-        const tokens = [service].concat(path.split('/').filter(x => x));
+        const tokens = [namespace].concat(path.split('/').filter(x => x));
         const method = tokens.join('.');
         const schema = generateSchema.json(tokens.join(' '), data);
         // delete $schema property as it is in conflict with swagger 2 specification
@@ -69,10 +67,10 @@ const generateMetaRoutes = ({service, context = {}, models = {}, prefix = '/meta
     // health
     routes[getPath('/health')] = {
         get: {
-            operationId: `${service}.health`,
+            operationId: `${namespace}.health`,
             tags: ['metadata'],
-            description: `${service}.health`,
-            'x-bus-method': `${service}.health`,
+            description: `${namespace}.health`,
+            'x-bus-method': `${namespace}.health`,
             responses: {
                 default: {
                     description: 'Invalid request.',
@@ -92,10 +90,10 @@ const generateMetaRoutes = ({service, context = {}, models = {}, prefix = '/meta
     // models
     routes[getPath('/models')] = {
         get: {
-            operationId: `${service}.models`,
+            operationId: `${namespace}.models`,
             tags: ['metadata'],
-            description: `${service}.models`,
-            'x-bus-method': `${service}.models`,
+            description: `${namespace}.models`,
+            'x-bus-method': `${namespace}.models`,
             responses: {
                 default: {
                     description: 'Invalid request.',
@@ -118,10 +116,10 @@ const generateMetaRoutes = ({service, context = {}, models = {}, prefix = '/meta
         delete schema.$schema;
         routes[getPath(`/models/${key}`)] = {
             get: {
-                operationId: `${service}.models.${key}`,
+                operationId: `${namespace}.models.${key}`,
                 tags: ['metadata'],
-                description: `${service}.models.${key}`,
-                'x-bus-method': `${service}.models.${key}`,
+                description: `${namespace}.models.${key}`,
+                'x-bus-method': `${namespace}.models.${key}`,
                 responses: {
                     default: {
                         description: 'Invalid request.',
@@ -138,23 +136,17 @@ const generateMetaRoutes = ({service, context = {}, models = {}, prefix = '/meta
     return routes;
 };
 
-module.exports = {
-    ports: [
-        function swagger(config = {}) {
-            const {service, context = {}, models = {}} = config;
+module.exports = ({namespace, context, models}) => {
+    return (...params) => class swagger extends require('ut-port-swagger')(...params) {
+        crud(config = {}) {
+            return crud({namespace, models})(config);
+        }
+        handlers() {
             return {
-                id: 'swagger',
-                createPort: require('ut-port-swagger'),
-                logLevel: 'trace',
-                crud: crud({service, models}),
-                models: {},
-                server: { // http server options
-                    port: 9999
-                },
                 start() {
                     this.swaggerDocument = preProcess(this.swaggerDocument, context);
                     const metaRoutes = generateMetaRoutes({
-                        service,
+                        namespace,
                         context,
                         models: Object.keys(models).reduce((all, key) => {
                             if (models[key].schema) {
@@ -167,5 +159,5 @@ module.exports = {
                 }
             };
         }
-    ]
+    };
 };

@@ -1,12 +1,12 @@
-module.exports = ({service, name, schema}) => {
+module.exports = ({namespace, entity, schema}) => {
     return {
-        path: `/${name}/search`,
+        path: `/${entity}/search`,
         method: 'post',
         spec: {
-            'x-bus-method': `${service}.${name}.fetch`,
-            operationId: `fetch${name}`,
-            tags: [name],
-            description: `Search for ${name} by specific criteria.`,
+            'x-bus-method': `${namespace}.${entity}.fetch`,
+            operationId: `fetch${entity}`,
+            tags: [entity],
+            description: `Search for ${entity} by specific criteria.`,
             parameters: [{
                 name: 'body',
                 in: 'body',

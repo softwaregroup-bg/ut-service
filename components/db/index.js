@@ -1,21 +1,21 @@
 
 const errorsFactory = require('./errors');
-module.exports = {
-    ports: [
-        function db(config = {}) {
-            return {
-                id: 'db',
-                createPort: require('ut-port-sql'),
-                logLevel: 'trace',
-                createTT: true,
-                createCRUD: true,
-                linkSP: true,
-                namespace: [`db/${config.service}`],
-                imports: [`db/${config.service}`],
-                start() {
-                    Object.assign(this.errors, errorsFactory(this.bus));
-                }
-            };
-        }
-    ]
+module.exports = ({namespace}) => (...params) => class db extends require('ut-port-sql')(...params) {
+    get defaults() {
+        return {
+            createTT: true,
+            createCRUD: true,
+            linkSP: true,
+            namespace: `db/${namespace}`,
+            imports: [`db/${namespace}`, 'sql', 'db']
+        };
+    }
+
+    handlers() {
+        return {
+            start() {
+                Object.assign(this.errors, errorsFactory(this.bus));
+            }
+        };
+    }
 };

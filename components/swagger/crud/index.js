@@ -9,10 +9,10 @@ const routes = [
 ];
 
 /**
- * @param {string} service - The name of the service. E.g
+ * @param {string} namespace - The namespace of the service. E.g
  * @returns {function} - a crud factory function
  */
-module.exports = ({service, models}) => {
+module.exports = ({namespace, models}) => {
     /**
      * @param {object} options - the documentation properties that are needed to create the swagger spec
      * @param {object} options.schemas - a key-value collection of primary object schemas
@@ -23,18 +23,18 @@ module.exports = ({service, models}) => {
         const swaggerDocument = {
             swagger: '2.0',
             info: {
-                title: `${service} service api`,
-                description: `API for interacting with ${service} data.`,
+                title: `${namespace} service api`,
+                description: `API for interacting with ${namespace} data.`,
                 version: '1.0'
             },
             produces: ['application/json'],
             basePath,
             definitions
         };
-        swaggerDocument.paths = Object.keys(models).reduce((paths, name) => {
-            const schema = models[name].schema || {};
+        swaggerDocument.paths = Object.keys(models).reduce((paths, entity) => {
+            const schema = models[entity].schema || {};
             routes.forEach(route => {
-                const {path, method, spec} = route({service, name, schema});
+                const {path, method, spec} = route({namespace, entity, schema});
                 if (!paths[path]) {
                     paths[path] = {};
                 } else if (paths[path][method]) {

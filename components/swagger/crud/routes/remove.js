@@ -1,12 +1,12 @@
-module.exports = ({service, name}) => {
+module.exports = ({namespace, entity}) => {
     return {
-        path: `/${name}/{id}`,
+        path: `/${entity}/{id}`,
         method: 'delete',
         spec: {
-            'x-bus-method': `${service}.${name}.remove`,
-            operationId: `remove${name}`,
-            tags: [name],
-            description: `Remove ${name}.`,
+            'x-bus-method': `${namespace}.${entity}.remove`,
+            operationId: `remove${entity}`,
+            tags: [entity],
+            description: `Remove ${entity}.`,
             parameters: [{
                 name: 'id',
                 in: 'path',

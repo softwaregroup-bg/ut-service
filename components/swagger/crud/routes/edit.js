@@ -5,24 +5,24 @@ const removeRequired = obj => {
             obj.properties = {...obj.properties}; // don't override by reference
             for (let prop in obj.properties) {
                 if (obj.properties.hasOwnProperty(prop)) {
-                    obj.properties[prop] = {...obj.properties[prop]};  // don't override by reference
+                    obj.properties[prop] = {...obj.properties[prop]}; // don't override by reference
                     removeRequired(obj.properties[prop]);
                 }
             }
         };
     }
 };
-module.exports = ({service, name, schema}) => {
-    const data = {...schema};  // don't override by reference
+module.exports = ({namespace, entity, schema}) => {
+    const data = {...schema}; // don't override by reference
     removeRequired(data);
     return {
-        path: `/${name}`,
+        path: `/${entity}`,
         method: 'patch',
         spec: {
-            'x-bus-method': `${service}.${name}.edit`,
-            operationId: `edit${name}`,
-            tags: [name],
-            description: `Edit a ${name}.`,
+            'x-bus-method': `${namespace}.${entity}.edit`,
+            operationId: `edit${entity}`,
+            tags: [entity],
+            description: `Edit a ${entity}.`,
             parameters: [{
                 name: 'body',
                 in: 'body',

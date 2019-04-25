@@ -1,8 +1,1 @@
-module.exports = {
-    ports: [
-        {
-            id: 'console',
-            createPort: require('ut-port-console')
-        }
-    ]
-};
+module.exports = () => (...params) => class console extends require('ut-port-console')(...params) {};

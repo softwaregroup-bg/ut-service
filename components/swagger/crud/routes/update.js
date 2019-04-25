@@ -1,12 +1,12 @@
-module.exports = ({service, name, schema}) => {
+module.exports = ({namespace, entity, schema}) => {
     return {
-        path: `/${name}`,
+        path: `/${entity}`,
         method: 'put',
         spec: {
-            'x-bus-method': `${service}.${name}.update`,
-            operationId: `update${name}`,
-            tags: [name],
-            description: `Update a ${name}.`,
+            'x-bus-method': `${namespace}.${entity}.update`,
+            operationId: `update${entity}`,
+            tags: [entity],
+            description: `Update a ${entity}.`,
             parameters: [{
                 name: 'body',
                 in: 'body',

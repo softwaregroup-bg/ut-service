@@ -1,8 +1,1 @@
-module.exports = {
-    ports: [
-        {
-            id: 'performance',
-            createPort: require('ut-port-performance')
-        }
-    ]
-};
+module.exports = () => (...params) => class performance extends require('ut-port-performance')(...params) {};

@@ -26,21 +26,22 @@
   "dependencies": {
     "generate-schema": "2.6.0",
     "lodash.isequal": "4.5.0",
-    "ut-port-amqp": "0.4.5",
-    "ut-port-cache": "0.1.3",
-    "ut-port-console": "8.1.0",
-    "ut-port-http": "7.3.0",
-    "ut-port-performance": "6.0.0",
-    "ut-port-script": "6.0.0",
-    "ut-port-sql": "7.4.0",
-    "ut-port-swagger": "1.5.0",
-    "ut-run": "9.7.0",
-    "ut-log": ">=6.3.0-rc-einstein.0 <6.3.0",
-    "ut-port": ">=6.7.0-rc-einstein.0 <6.7.0",
-    "ut-bus": ">=6.6.0-rc-einstein.0 <6.6.0"
+    "ut-port-amqp": "^0.4.5",
+    "ut-port-cache": "^0.3.0",
+    "ut-port-console": "^8.2.3",
+    "ut-port-http": "^8.0.1",
+    "ut-port-performance": "^7.0.1",
+    "ut-port-script": "^7.0.1",
+    "ut-port-sql": "^7.12.1",
+    "ut-port-swagger": "^1.5.0",
+    "ut-run": "^10.4.0",
+    "ut-log": "^6.5.2",
+    "ut-port": "^6.12.1",
+    "ut-bus": "^7.3.0"
   },
   "devDependencies": {
-    "ut-tools": "^5.32.10"
+    "ut-tools": "^6.15.0",
+    "tap": "^12.6.2"
   },
   "repository": {
     "type": "git",
