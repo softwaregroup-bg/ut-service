@@ -3,6 +3,13 @@ const errorsFactory = require('./errors');
 module.exports = {
     ports: [
         function db(config = {}) {
+            const namespace = config.namespace
+                ? Array.from(new Set([`db/${config.service}`, ...config.namespace]))
+                : [`db/${config.service}`];
+            const imports = config.imports
+                ? Array.from(new Set([`db/${config.service}`, ...config.imports]))
+                : [`db/${config.service}`];
+
             return {
                 id: 'db',
                 createPort: require('ut-port-sql'),
@@ -10,8 +17,8 @@ module.exports = {
                 createTT: true,
                 createCRUD: true,
                 linkSP: true,
-                namespace: [`db/${config.service}`],
-                imports: [`db/${config.service}`],
+                namespace,
+                imports,
                 start() {
                     Object.assign(this.errors, errorsFactory(this.bus));
                 }
