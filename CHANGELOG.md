@@ -1,3 +1,20 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.3...v1.2.0) (2020-07-17)
+
+
+### Bug Fixes
+
+* ignore package-lock.json ([a455b57](https://github.com/softwaregroup-bg/ut-service/commit/a455b57))
+* remove package lock ([a295d38](https://github.com/softwaregroup-bg/ut-service/commit/a295d38))
+* update package-lock.json ([fc9e28b](https://github.com/softwaregroup-bg/ut-service/commit/fc9e28b))
+
+
+### Features
+
+* optionally extend the database port namespace and imports arrays ([9ccb0e1](https://github.com/softwaregroup-bg/ut-service/commit/9ccb0e1))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/softwaregroup-bg/ut-service/compare/v1.1.2...v1.1.3) (2019-02-07)
 
