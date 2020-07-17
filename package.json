@@ -40,7 +40,7 @@
     "ut-bus": ">=6.6.0-rc-einstein.0 <6.6.0"
   },
   "devDependencies": {
-    "ut-tools": "^5.32.10"
+    "ut-tools": "^5.32.11"
   },
   "repository": {
     "type": "git",
