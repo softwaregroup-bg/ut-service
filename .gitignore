@@ -5,3 +5,4 @@ dev
 temp.*
 coverage
 junit.xml
+package-lock.json
