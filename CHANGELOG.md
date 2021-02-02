@@ -1,3 +1,8 @@
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/softwaregroup-bg/ut-service/compare/v1.2.1...v1.2.2) (2021-02-02)
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/softwaregroup-bg/ut-service/compare/v1.2.0...v1.2.1) (2020-09-14)
 
